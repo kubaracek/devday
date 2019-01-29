@@ -1,0 +1,16 @@
+services:
+  mysql:
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_ROOT_PASSWORD: root
+    image: mysql:5.6.36
+    ports:
+    - 127.0.0.1:3306:3306/tcp
+    restart: always
+    volumes:
+    - ./docker/development/mysql/conf:/etc/mysql/conf.d:ro
+    - ./docker/development/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    - mysql:/var/lib/mysql:rw
+version: '3.0'
+volumes:
+  mysql: {}
