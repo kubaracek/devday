@@ -6,11 +6,11 @@ class ApplicationController < ActionController::Base
   before_action :load_enterprise_configuration
 
   def load_organization()
-  	@organization = current_user.organization if(current_user.present?)
+    @organization = current_user.organization if(current_user.present?)
   end
 
   def load_enterprise_configuration()
-  	@enterprise_configuration = @organization.enterprise_configuration if(current_user.present?)
+    @enterprise_configuration = @organization.enterprise_configuration if(current_user.present?)
   end
 
 end

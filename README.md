@@ -6,16 +6,16 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
-	* ruby 2.4.1
+  * ruby 2.4.1
 * System dependencies
-	* rvm (or other ruby version manager)
-	* docker
-	* docker-compose
+  * rvm (or other ruby version manager)
+  * docker
+  * docker-compose
 * Configuration
-	* docker-compose up
-	* bundle install
+  * docker-compose up
+  * bundle install
 * Database creation
-	* rails db:setup
+  * rails db:setup
 * Database initialization
 * How to run the test suite
 

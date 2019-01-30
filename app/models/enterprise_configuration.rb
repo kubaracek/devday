@@ -15,8 +15,8 @@
 #
 
 class EnterpriseConfiguration < ApplicationRecord
-	belongs_to :organization
+  belongs_to :organization
 
-	validates :organization_id, :presence => true, :uniqueness => true
+  validates :organization_id, :presence => true, :uniqueness => true
 
 end
