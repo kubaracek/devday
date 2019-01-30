@@ -12,10 +12,10 @@ RUN set -xe \
     && gem install mailcatcher -v 0.6.5 --no-ri --no-rdoc \
     && apk del .build-deps
 
-# smtp port 
-EXPOSE 1025 
+# smtp port
+EXPOSE 1025
 
-# webserver port 
-EXPOSE 1080 
+# webserver port
+EXPOSE 1080
 
 CMD ["mailcatcher", "--no-quit", "--foreground", "--ip=0.0.0.0"]
