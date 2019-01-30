@@ -11,6 +11,13 @@ services:
     - ./docker/development/mysql/conf:/etc/mysql/conf.d:ro
     - ./docker/development/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
     - mysql:/var/lib/mysql:rw
+  mailcatcher:
+    build:
+      context: ./docker/development/mailcatcher
+    ports:
+    - 127.0.0.1:1080:1080/tcp
+    - 127.0.0.1:1025:1025/tcp
+    restart: always
 version: '3.0'
 volumes:
   mysql: {}
