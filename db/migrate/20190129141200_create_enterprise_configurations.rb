@@ -4,8 +4,8 @@ class CreateEnterpriseConfigurations < ActiveRecord::Migration[5.1]
       t.string :app_name
       t.string :subdomain
       t.integer :organization_id
-
       t.timestamps
     end
+    add_index :enterprise_configurations, :organization_id
   end
 end

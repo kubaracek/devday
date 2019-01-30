@@ -9,6 +9,10 @@
 #  updated_at      :datetime         not null
 #  organization_id :integer
 #
+# Indexes
+#
+#  index_enterprise_configurations_on_organization_id  (organization_id)
+#
 
 class EnterpriseConfiguration < ApplicationRecord
 	belongs_to :organization

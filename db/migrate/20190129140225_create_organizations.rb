@@ -4,8 +4,8 @@ class CreateOrganizations < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :secret
       t.integer :user_id
-
       t.timestamps
     end
+	add_index :organizations, :user_id
   end
 end
