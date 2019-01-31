@@ -1,31 +1,28 @@
-# README
+# MTM-DevDay
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Getting things ready
 
-Things you may want to cover:
-
-* Ruby version
+* **Ruby version**
   * ruby 2.4.1
-* System dependencies
-  * rvm (or other ruby version manager)
+  * rails 5.1.6
+* **System dependencies**
+  * rvm (or other ruby version manager) is advised
   * docker
   * docker-compose
-* Configuration
+* **Configuration**
   * docker-compose up
   * bundle install
-* Database creation
+* **Database creation**
   * rails db:setup
-* Database initialization
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* Development
-  * rails s
+* **Development**
+  * `rails s`
   * go to http://localhost:3000
     * login with email: mail@example.com, password: password
   * go to http://localhost:3000/admin
     * login with email: admin@example.com, password: password
+  * This is a known bug with ActiveAdmin and Devise which we just accept for this little testing setup
+
+
+## Tasks
+
+(Tasks from GDoc be here)
