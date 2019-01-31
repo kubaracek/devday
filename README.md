@@ -23,4 +23,9 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* Development
+  * rails s
+  * go to http://localhost:3000
+    * login with email: mail@example.com, password: password
+  * go to http://localhost:3000/admin
+    * login with email: admin@example.com, password: password
