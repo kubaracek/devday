@@ -4,14 +4,14 @@
 #
 #  id                     :bigint(8)        not null, primary key
 #  confirmation_sent_at   :datetime
-#  confirmation_token     :string(255)
+#  confirmation_token     :string
 #  confirmed_at           :datetime
-#  email                  :string(255)      default(""), not null
-#  encrypted_password     :string(255)      default(""), not null
+#  email                  :string           default(""), not null
+#  encrypted_password     :string           default(""), not null
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
-#  reset_password_token   :string(255)
-#  unconfirmed_email      :string(255)
+#  reset_password_token   :string
+#  unconfirmed_email      :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #
@@ -31,4 +31,10 @@ class User < ApplicationRecord
 
   after_create :create_organization
 
+
+  #VERY NAIVE
+  #
+  def is_admin?
+    self.email == 'admin@example.com'
+  end
 end

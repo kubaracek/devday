@@ -3,8 +3,8 @@
 # Table name: organizations
 #
 #  id         :bigint(8)        not null, primary key
-#  name       :string(255)
-#  secret     :string(255)
+#  name       :string
+#  secret     :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  user_id    :integer
@@ -15,9 +15,10 @@
 #
 
 class Organization < ApplicationRecord
-
   belongs_to :user
   has_one :enterprise_configuration, :dependent => :destroy
+
+  delegate :ip_whitelist, to: :enterprise_configuration, allow_nil: true
 
   after_initialize :set_defaults
 
@@ -30,4 +31,11 @@ class Organization < ApplicationRecord
     self.secret = SecureRandom.hex(16) if(self.secret.blank?)
   end
 
+  def enterprise?
+    self.enterprise_configuration.present?
+  end
+
+  def firewall
+    @firewall ||= TheBestFirewallYouWillEverNeed.new(self)
+  end
 end

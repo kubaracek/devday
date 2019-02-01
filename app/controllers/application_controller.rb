@@ -13,4 +13,15 @@ class ApplicationController < ActionController::Base
     @enterprise_configuration = @organization.enterprise_configuration if(current_user.present?)
   end
 
+  def firewall
+    if !is_admin? && !@organization.firewall.allow?(request)
+      render plain: "Bad ip. Your ip is #{request.remote_ip}"
+    end
+  end
+
+  private
+
+  def is_admin?
+    current_user.present? && current_user.is_admin?
+  end
 end

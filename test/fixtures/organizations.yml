@@ -3,8 +3,8 @@
 # Table name: organizations
 #
 #  id         :bigint(8)        not null, primary key
-#  name       :string(255)
-#  secret     :string(255)
+#  name       :string
+#  secret     :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  user_id    :integer
